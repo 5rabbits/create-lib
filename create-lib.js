@@ -3,6 +3,17 @@
 const program = require('commander')
 const pkg = require('./package.json')
 
+let libraryName
+
 program
   .version(pkg.version)
-  .parse(process.argv)
+  .arguments('<library-name>')
+  .action(name => {
+    libraryName = name
+  })
+
+program.parse(process.argv)
+
+if (!libraryName) {
+  program.help()
+}
