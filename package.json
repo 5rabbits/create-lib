@@ -3,7 +3,15 @@
   "version": "0.1.0",
   "author": "5rabbits <5rabbits@lemontech.com> (http://www.5rabbits.com)",
   "license": "MIT",
+  "bin": {
+    "create-lib": "./index.js"
+  },
   "dependencies": {
-    "commander": "2.15.0"
+    "commander": "2.15.0",
+    "dot": "1.1.2",
+    "fs-extra": "5.0.0",
+    "recursive-readdir": "2.2.2",
+    "uppercamelcase": "3.0.0",
+    "validate-npm-package-name": "3.0.0"
   }
 }

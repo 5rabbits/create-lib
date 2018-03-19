@@ -1,0 +1,4 @@
+{
+  "extends": ["@5rabbits", "prettier"],
+  "parser": "babel-eslint"
+}

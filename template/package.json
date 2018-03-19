@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "workspaces": ["lib", "example"],
+  "devDependencies": {
+    "@5rabbits/eslint-config": "1.0.0",
+    "babel-eslint": "8.2.2",
+    "concurrently": "3.5.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-import-resolver-webpack": "0.8.4",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "0.15.0-rc.8",
+    "lint-staged": "7.0.0",
+    "prettier": "1.11.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx",
+    "prettify": "prettier .eslintrc \"**/*.{js,json,css,md}\" --write",
+    "start":
+      "concurrently \"cd lib && yarn start\" \"cd example && yarn start\" --kill-others --names \"lib,example\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"],
+    "*.js": ["eslint"]
+  }
+}
