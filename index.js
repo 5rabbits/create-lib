@@ -40,14 +40,18 @@ function validateName(name) {
 function createProject(name) {
   validateName(name)
 
+  // Maybe this could be configurable
+  const organization = '5rabbits'
+
   libraryName = name
-  packageName = `@5rabbits/${libraryName}`
+  packageName = `@${organization}/${libraryName}`
   componentName = camelCase(libraryName)
 
   const templateValues = {
     libraryName,
     packageName,
     componentName,
+    organization,
   }
 
   const templatePath = path.resolve(__dirname, 'template')

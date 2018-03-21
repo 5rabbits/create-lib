@@ -1,4 +1,32 @@
 {
   "extends": ["@5rabbits", "prettier"],
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "stories/*",
+        "rollup.config.js",
+        "tests/*",
+        "**/__tests__/*"
+      ]
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "modules": ["node_modules", "src"]
+          }
+        }
+      }
+    },
+    "import/core-modules": [
+      "react", "react-dom"
+    ]
+  }
 }

@@ -1,63 +1,32 @@
-# {{= it.packageName }}
+# {{= it.packageName }} [![npm](https://img.shields.io/npm/v/@{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://www.npmjs.com/package/@{{= it.organization }}/{{= it.libraryName }}) [![Travis](https://img.shields.io/travis/{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://travis-ci.org/{{= it.organization }}/{{= it.libraryName }}) [![Codecov](https://img.shields.io/codecov/c/github/{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://codecov.io/gh/{{= it.organization }}/{{= it.libraryName }})
+
+*TODO:* Add a short description for your library. It should probably match the field `description` on the `package.json` file.
+
+## Usage
+
+* Install with `yarn add {{= it.packageName }}`.
+* Install peer dependencies (if you haven't already) `yarn add react@^16.0.0 react-dom@^16.0.0`. React 15 is also supported.
+* Use the component:
+
+```es6
+import {{= it.componentName }} from '{{= it.packageName }}'
+
+<{{= it.componentName }} />
+```
+
+[Demo](https://{{= it.organization }}.github.io/{{= it.libraryName }})
+
+## Props
+
+| prop       | type   | default | required | description       |
+| :--------- | :----- | :------ | :------- | :---------------- |
+| someProp   | string |         | yes      | Prop description. |
+| otherProps | number |         |          | Prop description. |
 
 ## Development
 
-### Requirements
+* Run `yarn start` to start building the library in watch mode.
+* Write [stories](https://storybook.js.org) in the `stories/index.js` file.
+* Run `yarn publish` to release a new version.
 
-* **NodeJS LTS**
-
-  If you have [nvm](https://github.com/creationix/nvm) installed and [integrated into your shell](https://github.com/creationix/nvm#deeper-shell-integration), it will automatically install the latests LTS version available whenever you enter the project directory.
-
-* **Yarn >= 1.0**
-
-  This project uses [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/) to handle multiple interconnected packages at once.
-
-### Packages
-
-This project consist on three packages that works together during development:
-
-#### lib
-
-The React component that other projects can use.
-
-Commands:
-
-```shell
-# Builds the package
-$ yarn build
-
-# Builds the package in watch mode
-$ yarn start
-```
-
-#### example
-
-An example app integration to use during development. It will hot reload any changes made to the library.
-
-Commands:
-
-```shell
-# Starts the development application at http://127.0.0.1:3000
-#
-# - PORT: (3000 by default) the port that the example application will use.
-#
-$ yarn start
-```
-
-### Setup
-
-* Clone this repository and `cd` to the root of the project.
-
-* Install dependencies.
-
-  ```shell
-  $ yarn install
-  ```
-
-* Start all the packages.
-
-  ```shell
-  $ yarn start
-  ```
-
-  This will simultaneously run `yarn start` in all packages.
+This project [lints](https://eslint.org/) and [prettifies](https://prettier.io) source files automatically before commiting.

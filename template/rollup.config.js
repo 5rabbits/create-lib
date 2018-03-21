@@ -46,28 +46,31 @@ export default {
     resolve({
       jsnext: true,
       main: true,
-      customResolveOptions: {
-        moduleDirectory: '../node_modules',
-      },
     }),
     commonjs({
-      include: '../node_modules/**',
+      include: 'node_modules/**',
       namedExports: {
-        '../node_modules/react/index.js': [
+        'node_modules/react/index.js': [
           'Children',
           'Component',
           'PureComponent',
           'Fragment',
           'createElement',
         ],
-        '../node_modules/react-dom/index.js': [
+        'node_modules/react-dom/index.js': [
           'findDOMNode',
           'unstable_batchedUpdates',
         ],
       },
     }),
     babel({
-      exclude: '../node_modules/**',
+      exclude: 'node_modules/**',
+      plugins: [
+        'external-helpers',
+        'transform-decorators-legacy',
+        'transform-class-properties',
+        'transform-object-rest-spread',
+      ],
     }),
     filesize(),
     visualizer(),
