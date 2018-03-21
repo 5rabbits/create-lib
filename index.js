@@ -74,8 +74,8 @@ function createProject(name) {
   validateProjectDir()
 
   createProjectFiles()
-    .then(createGitRepo)
     .then(installDependencies)
+    .then(createGitRepo)
     .then(printSuccess)
 }
 
