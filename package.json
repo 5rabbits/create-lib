@@ -10,9 +10,11 @@
     "access": "public"
   },
   "dependencies": {
+    "chalk": "2.3.2",
     "commander": "2.15.0",
     "dot": "1.1.2",
     "fs-extra": "5.0.0",
+    "ora": "2.0.0",
     "recursive-readdir": "2.2.2",
     "uppercamelcase": "3.0.0",
     "validate-npm-package-name": "3.0.0"
