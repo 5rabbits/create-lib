@@ -173,5 +173,7 @@ function projectExec(command) {
 }
 
 function evaluateFilePath(filePath) {
-  return filePath.replace(/_COMPONENT_/g, componentName)
+  return filePath
+    .replace(/_COMPONENT_/g, componentName)
+    .replace(/_RENAME_/g, '')
 }
