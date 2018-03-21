@@ -20,6 +20,7 @@ const originalCwd = process.cwd()
 let libraryName
 let packageName
 let componentName
+let repository
 let templatePath
 let projectCwd
 
@@ -53,6 +54,7 @@ function createProject(name) {
   libraryName = name
   packageName = `@${organization}/${libraryName}`
   componentName = camelCase(libraryName)
+  repository = `${organization}/${libraryName}`
   templatePath = path.resolve(__dirname, 'template')
   projectCwd = path.join(process.cwd(), libraryName)
 
@@ -86,6 +88,7 @@ function createProjectFiles(name) {
       packageName,
       componentName,
       organization,
+      repository,
     }
 
     readDir(templatePath)

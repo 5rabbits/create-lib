@@ -7,15 +7,11 @@
   "description": "",
   "author": "5rabbits <5rabbits@lemontech.com> (http://www.5rabbits.com)",
   "keywords": ["5rabbits", "lemontech", "react"],
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "repository": "github:{{= it.repository }}",
   "publishConfig": {
     "public": true
   },
   "homepage": "https://www.lemontech.com",
-  "bugs": "",
   "scripts": {
     "build": "rollup -c",
     "start":

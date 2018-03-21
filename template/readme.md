@@ -1,4 +1,4 @@
-# {{= it.packageName }} [![npm](https://img.shields.io/npm/v/@{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://www.npmjs.com/package/@{{= it.organization }}/{{= it.libraryName }}) [![Travis](https://img.shields.io/travis/{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://travis-ci.org/{{= it.organization }}/{{= it.libraryName }}) [![Codecov](https://img.shields.io/codecov/c/github/{{= it.organization }}/{{= it.libraryName }}.svg?style=flat-square)](https://codecov.io/gh/{{= it.organization }}/{{= it.libraryName }})
+# {{= it.packageName }} [![npm](https://img.shields.io/npm/v/{{= it.packageName }}.svg?style=flat-square)](https://www.npmjs.com/package/{{= it.packageName }}) [![Travis](https://img.shields.io/travis/{{= it.repository }}.svg?style=flat-square)](https://travis-ci.org/{{= it.repository }}) [![Codecov](https://img.shields.io/codecov/c/repository/{{= it.repository }}.svg?style=flat-square)](https://codecov.io/gh/{{= it.repository }})
 
 *TODO:* Add a short description for your library. It should probably match the field `description` on the `package.json` file.
 
