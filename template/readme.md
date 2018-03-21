@@ -14,7 +14,7 @@ import {{= it.componentName }} from '{{= it.packageName }}'
 <{{= it.componentName }} />
 ```
 
-[Demo](https://{{= it.organization }}.github.io/{{= it.libraryName }})
+[Demo](https://{{= it.repositoryUser }}.github.io/{{= it.repositoryName }})
 
 ## Props
 

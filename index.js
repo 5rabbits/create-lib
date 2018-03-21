@@ -10,6 +10,7 @@ const directoryExists = require('directory-exists')
 const validateNpmPackageName = require('validate-npm-package-name')
 const chalk = require('chalk')
 const ora = require('ora')
+const inquirer = require('inquirer')
 const columnify = require('columnify')
 const pkg = require('./package.json')
 const exec = require('child_process').exec
@@ -17,13 +18,15 @@ const exec = require('child_process').exec
 dot.templateSettings.strip = false
 
 const spinner = ora()
-const organization = '5rabbits' // Maybe this could be configurable
 const originalCwd = process.cwd()
+let organization
 let libraryName
 let packageName
 let componentName
 let repository
 let repositoryFull
+let repositoryUser
+let repositoryName
 let templatePath
 let projectCwd
 
@@ -63,20 +66,51 @@ function createProject(name) {
   console.log(`${chalk.yellow('@5rabbits/create-lib')} v${pkg.version}\n`)
 
   libraryName = name
-  packageName = `@${organization}/${libraryName}`
   componentName = camelCase(libraryName)
-  repository = `${organization}/${libraryName}`
-  repositoryFull = `https://github.com/${organization}/${libraryName}`
-  templatePath = path.resolve(__dirname, 'template')
   projectCwd = path.join(process.cwd(), libraryName)
+  templatePath = path.resolve(__dirname, 'template')
 
   validateLibraryName()
   validateProjectDir()
 
-  createProjectFiles()
-    .then(installDependencies)
-    .then(createGitRepo)
-    .then(printSuccess)
+  inquirer.prompt([
+    {
+      type: 'input',
+      name: 'organization',
+      message: 'NPM organization?',
+      default: '5rabbits',
+      validate: answer => (
+        !!validateNpmPackageName(answer).errors
+          ? 'Invalid organization name. It should be URL friendly.'
+          : true
+      )
+    },
+    {
+      type: 'input',
+      name: 'repository',
+      message: 'Github repository?',
+      default: `5rabbits/${name}`,
+      validate: answer => (
+        answer.split('/').length === 2
+          ? true
+          : 'Invalid repository name. Should be in format USER/REPOSITORY_NAME.'
+      )
+    },
+  ])
+  .then(answers => {
+    const repositorySegments = answers.repository.split('/')
+
+    organization = answers.organization
+    repository = answers.repository
+    packageName = `@${organization}/${libraryName}`
+    repositoryUser = repositorySegments[0]
+    repositoryName = repositorySegments[1]
+    repositoryFull = `https://github.com/${repository}`
+  })
+  .then(createProjectFiles)
+  .then(installDependencies)
+  .then(createGitRepo)
+  .then(printSuccess)
 }
 
 function printSuccess() {
@@ -140,6 +174,8 @@ function createProjectFiles(name) {
       organization,
       repository,
       repositoryFull,
+      repositoryUser,
+      repositoryName,
     }
 
     readDir(templatePath)
