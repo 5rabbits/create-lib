@@ -7,7 +7,7 @@
     "create-lib": "./index.js"
   },
   "publishConfig": {
-    "public": true
+    "access": "public"
   },
   "dependencies": {
     "commander": "2.15.0",
