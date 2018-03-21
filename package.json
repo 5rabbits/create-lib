@@ -6,6 +6,9 @@
   "bin": {
     "create-lib": "./index.js"
   },
+  "publishConfig": {
+    "public": true
+  },
   "dependencies": {
     "commander": "2.15.0",
     "dot": "1.1.2",
