@@ -49,6 +49,7 @@ function validateName(name) {
 }
 
 function createProject(name) {
+  console.log('')
   console.log(`${chalk.yellow('@5rabbits/create-lib')} v${pkg.version}\n`)
 
   validateName(name)
