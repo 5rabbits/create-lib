@@ -6,6 +6,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const camelCase = require('uppercamelcase')
 const readDir = require('recursive-readdir')
+const directoryExists = require('directory-exists')
 const validateNpmPackageName = require('validate-npm-package-name')
 const chalk = require('chalk')
 const ora = require('ora')
@@ -39,11 +40,20 @@ if (!libraryName) {
   program.help()
 }
 
-function validateName(name) {
-  const validation = validateNpmPackageName(name)
+function validateLibraryName() {
+  const validation = validateNpmPackageName(libraryName)
 
   if (validation.errors) {
     console.error(chalk.red('Project name can only contain URL-friendly characters'))
+    process.exit(1)
+  }
+}
+
+function validateProjectDir() {
+  const exists = directoryExists.sync(projectCwd)
+
+  if (exists) {
+    console.error(chalk.red(`Folder ${libraryName} already exists`))
     process.exit(1)
   }
 }
@@ -52,8 +62,6 @@ function createProject(name) {
   console.log('')
   console.log(`${chalk.yellow('@5rabbits/create-lib')} v${pkg.version}\n`)
 
-  validateName(name)
-
   libraryName = name
   packageName = `@${organization}/${libraryName}`
   componentName = camelCase(libraryName)
@@ -61,6 +69,9 @@ function createProject(name) {
   repositoryFull = `https://github.com/${organization}/${libraryName}`
   templatePath = path.resolve(__dirname, 'template')
   projectCwd = path.join(process.cwd(), libraryName)
+
+  validateLibraryName()
+  validateProjectDir()
 
   createProjectFiles()
     .then(createGitRepo)
