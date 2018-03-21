@@ -125,6 +125,7 @@ function createGitRepo() {
   return projectExec('git init')
     .then(() => projectExec('git add .'))
     .then(() => projectExec('git commit -m "Initial commit"'))
+    .then(() => projectExec(`git remote add origin git@github.com:${repository}.git`))
     .then(() => spinner.succeed('Git repo initialized'))
 }
 
