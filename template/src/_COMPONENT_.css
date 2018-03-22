@@ -1,0 +1,9 @@
+$primary-color: #0f82f5;
+
+.my-library {
+  background: $primary-color;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 16px;
+}

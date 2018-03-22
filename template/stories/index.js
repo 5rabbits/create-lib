@@ -4,7 +4,8 @@ import { action } from '@storybook/addon-actions'
 import { withReadme } from 'storybook-readme'
 import readme from '../readme.md'
 import {{= it.componentName }} from '../dist/{{= it.libraryName }}'
+import '../dist/{{= it.libraryName }}.css'
 
 storiesOf('{{= it.componentName }}', module)
   .addDecorator(withReadme([readme]))
-  .add('without props', () => <{{= it.componentName }} />)
+  .add('with onClick handler', () => <{{= it.componentName }} onClick={action('onClick')} />)

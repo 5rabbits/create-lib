@@ -6,6 +6,6 @@ describe({{= it.componentName }}, () => {
   it('should render the component name', () => {
     const component = shallow(<{{= it.componentName }} />)
 
-    expect(component).toHaveText('{{= it.componentName }}')
+    expect(component).toHaveText('Click me')
   })
 })
