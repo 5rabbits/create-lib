@@ -1,7 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
-import cleaner from 'rollup-plugin-cleaner'
 import replace from 'rollup-plugin-replace'
 import postcss from 'rollup-plugin-postcss'
 import includePaths from 'rollup-plugin-includepaths'
@@ -27,9 +26,6 @@ export default {
   },
   external: ['react', 'react-dom'],
   plugins: [
-    cleaner({
-      targets: ['./dist/'],
-    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
     }),

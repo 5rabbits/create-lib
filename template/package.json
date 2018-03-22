@@ -73,7 +73,6 @@
     "react-test-renderer": "^15.0.0",
     "rollup": "0.56.3",
     "rollup-plugin-babel": "3.0.3",
-    "rollup-plugin-cleaner": "0.2.0",
     "rollup-plugin-commonjs": "8.3.0",
     "rollup-plugin-includepaths": "0.2.2",
     "rollup-plugin-json": "2.3.0",
@@ -89,17 +88,24 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.0"
+    "deepmerge": "^2.1.0",
+    "node-polyglot": "^2.2.2",
+    "prop-types": "^15.5.0",
+    "react-polyglot": "^0.2.5"
   },
   "jest": {
-    "moduleDirectories": ["src", "node_modules"],
+    "moduleDirectories": ["src", "node_modules", "tests"],
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy",
       "\\.svg$": "identity-obj-proxy"
     },
     "collectCoverage": true,
     "coverageDirectory": "tests/coverage",
-    "coveragePathIgnorePatterns": ["node_modules", "tests/setup.js"],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "tests/setup.js",
+      "tests/test-helper.js"
+    ],
     "coverageReporters": ["html", "text-summary", "lcov"],
     "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
     "setupTestFrameworkScriptFile": "<rootDir>/tests/setup.js"

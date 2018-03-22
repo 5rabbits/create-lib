@@ -19,10 +19,10 @@ import '{{= it.packageName }}/dist/{{= it.libraryName }}.css'
 
 ## Props
 
-| prop       | type   | default | required | description       |
-| :--------- | :----- | :------ | :------- | :---------------- |
-| someProp   | string |         | yes      | Prop description. |
-| otherProps | number |         |          | Prop description. |
+| prop         | type   | default | required | description                                                                                                                                                                                       |
+| :----------- | :----- | :------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| locale       | string | `'en'`  |          | Language to display the component. `en` and `es` are supported by default, but you can add other languages using the `translations` prop.                                                         |
+| translations | object |         |          | Extra locales for the component. Use [this file](https://github.com/{{= it.repository }}/blob/master/src/locale/en.js) as a template and pass the translations as `{ [locale]: [translations] }`. |
 
 ## Development
 
