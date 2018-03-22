@@ -10,6 +10,7 @@ _TODO:_ Add a short description for your library. It should probably match the f
 
 ```es6
 import {{= it.componentName }} from '{{= it.packageName }}'
+import '{{= it.packageName }}/dist/{{= it.libraryName }}.css'
 
 <{{= it.componentName }} />
 ```
