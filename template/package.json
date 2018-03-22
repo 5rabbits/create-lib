@@ -75,7 +75,6 @@
     "rollup-plugin-babel": "3.0.3",
     "rollup-plugin-cleaner": "0.2.0",
     "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-filesize": "1.5.0",
     "rollup-plugin-includepaths": "0.2.2",
     "rollup-plugin-json": "2.3.0",
     "rollup-plugin-node-resolve": "3.0.3",

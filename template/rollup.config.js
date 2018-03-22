@@ -7,7 +7,6 @@ import postcss from 'rollup-plugin-postcss'
 import includePaths from 'rollup-plugin-includepaths'
 import json from 'rollup-plugin-json'
 import svg from 'rollup-plugin-svg-to-jsx'
-import filesize from 'rollup-plugin-filesize'
 import visualizer from 'rollup-plugin-visualizer'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
@@ -72,7 +71,6 @@ export default {
         'transform-object-rest-spread',
       ],
     }),
-    filesize(),
     visualizer(),
   ],
 }
