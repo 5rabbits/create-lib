@@ -1,6 +1,6 @@
 {
   "name": "@5rabbits/create-lib",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "5rabbits <5rabbits@lemontech.com> (http://www.5rabbits.com)",
   "license": "MIT",
   "bin": {
