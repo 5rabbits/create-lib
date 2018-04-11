@@ -12,3 +12,5 @@ Create a react library with no configuration, based on 5rabbits standards.
 * Follow the onscreen instructions.
 
 ![CLI instructions](https://github.com/5rabbits/create-react-lib/raw/readme-assets/readme-assets/cli-instructions.png)
+
+* Finally read your new library readme, it contains valuable information on the things that are preconfigured.
