@@ -3,6 +3,11 @@
   "version": "0.4.0",
   "author": "5rabbits <5rabbits@lemontech.com> (http://www.5rabbits.com)",
   "license": "MIT",
+  "description": "Create a react library with no configuration, based on 5rabbits standards.",
+  "keywords": ["react", "create", "lib", "5rabbits", "lemontech"],
+  "repository": "https://github.com/5rabbits/create-react-lib",
+  "homepage": "https://www.lemontech.com",
+  "bugs": "https://github.com/5rabbits/create-react-lib/issues",
   "bin": {
     "create-react-lib": "./index.js"
   },
