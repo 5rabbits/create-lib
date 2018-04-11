@@ -8,6 +8,4 @@ import '../dist/{{= it.libraryName }}.css'
 
 storiesOf('{{= it.componentName }}', module)
   .addDecorator(withReadme([readme]))
-  .add('with onClick handler', () => (
-    <{{= it.componentName }} onClick={action('onClick')} />
-  ))
+  .add('with onClick handler', () => <{{= it.componentName }} onClick={action('onClick')} />)
