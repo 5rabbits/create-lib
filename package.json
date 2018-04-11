@@ -26,5 +26,8 @@
     "recursive-readdir": "2.2.2",
     "uppercamelcase": "3.0.0",
     "validate-npm-package-name": "3.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0"
   }
 }

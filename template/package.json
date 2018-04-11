@@ -109,5 +109,8 @@
     "coverageReporters": ["html", "text-summary", "lcov"],
     "snapshotSerializers": ["<rootDir>/node_modules/enzyme-to-json/serializer"],
     "setupTestFrameworkScriptFile": "<rootDir>/tests/setup.js"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   }
 }
