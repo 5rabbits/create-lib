@@ -35,6 +35,8 @@
   "devDependencies": {
     "@5rabbits/eslint-config": "^1.0.0",
     "@storybook/addon-actions": "^3.3.0",
+    "@storybook/addon-knobs": "^3.4.0",
+    "@storybook/addons": "^3.3.0",
     "@storybook/react": "^3.3.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^6.0.0",
@@ -46,6 +48,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.0.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.0.0",
+    "babel-runtime": "^6.0.0",
     "concurrently": "^3.0.0",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-15": "^1.0.0",
@@ -88,6 +91,7 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
+    "classnames": "^2.0.0",
     "deepmerge": "^2.0.0",
     "node-polyglot": "^2.2.0",
     "prop-types": "^15.5.0",
