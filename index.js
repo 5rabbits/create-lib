@@ -63,7 +63,7 @@ function validateProjectDir() {
 
 function createProject(name) {
   console.log('')
-  console.log(`${chalk.yellow('@5rabbits/create-lib')} v${pkg.version}\n`)
+  console.log(`${chalk.yellow(pkg.name)} v${pkg.version}\n`)
 
   libraryName = name
   componentName = camelCase(libraryName)
