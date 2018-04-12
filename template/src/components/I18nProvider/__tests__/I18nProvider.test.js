@@ -22,8 +22,8 @@ describe(I18nProvider, () => {
         locale="fr"
         translations={{
           fr: {
-            helloWorld: 'Bonjour monde'
-          }
+            helloWorld: 'Bonjour monde',
+          },
         }}
       >
         <TestComponent />
@@ -33,7 +33,7 @@ describe(I18nProvider, () => {
     expect(component.find('span')).toHaveText('Bonjour monde')
   })
 
-  describe('if the locale doesn\'t have translations', () => {
+  describe("if the locale doesn't have translations", () => {
     beforeEach(() => {
       jest.spyOn(console, 'warn').mockImplementation(() => {})
     })
@@ -52,7 +52,7 @@ describe(I18nProvider, () => {
 
       // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledWith(
-        `{{= it.packageName }}: Translations not found for locale "fr".`
+        `<%= packageName %>: Translations not found for locale "fr".`
       )
     })
 
@@ -62,8 +62,8 @@ describe(I18nProvider, () => {
           locale="fr"
           translations={{
             en: {
-              helloWorld: 'Hello world'
-            }
+              helloWorld: 'Hello world',
+            },
           }}
         >
           <TestComponent />

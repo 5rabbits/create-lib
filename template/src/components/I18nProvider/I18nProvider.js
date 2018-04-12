@@ -11,7 +11,7 @@ const I18nProvider = ({ children, locale, translations }) => {
   if (!messages[locale]) {
     // eslint-disable-next-line no-console
     console.warn(
-      `{{= it.packageName }}: Translations not found for locale "${locale}".`
+      `<%= packageName %>: Translations not found for locale "${locale}".`
     )
     validLocale = 'en'
   }

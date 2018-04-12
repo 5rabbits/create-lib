@@ -1,15 +1,15 @@
 {
-  "name": "{{= it.packageName }}",
+  "name": "<%= packageName %>",
   "version": "0.1.0",
-  "main": "dist/{{= it.libraryName }}.js",
+  "main": "dist/<%= libraryName %>.js",
   "files": ["dist/*"],
   "license": "MIT",
   "description": "",
   "author": "5rabbits <5rabbits@lemontech.com> (http://www.5rabbits.com)",
   "keywords": ["5rabbits", "lemontech", "react"],
-  "repository": "github:{{= it.repository }}",
+  "repository": "github:<%= repository %>",
   "publishConfig": {
-    "public": true
+    "access": "public"
   },
   "homepage": "https://www.lemontech.com",
   "scripts": {

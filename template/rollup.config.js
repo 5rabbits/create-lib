@@ -14,9 +14,9 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 export default {
   input: 'src/index.js',
   output: {
-    file: 'dist/{{= it.libraryName }}.js',
+    file: 'dist/<%= libraryName %>.js',
     format: 'umd',
-    name: '{{= it.libraryName }}',
+    name: '<%= libraryName %>',
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',

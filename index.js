@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander')
-const dot = require('dot')
+const lodash = require('lodash')
 const fs = require('fs-extra')
 const path = require('path')
 const camelCase = require('uppercamelcase')
@@ -15,7 +15,7 @@ const columnify = require('columnify')
 const pkg = require('./package.json')
 const exec = require('child_process').exec
 
-dot.templateSettings.strip = false
+lodash.templateSettings.interpolate = /<%=([\s\S]+?)%>/g
 
 const spinner = ora()
 const originalCwd = process.cwd()
@@ -186,7 +186,7 @@ function createProjectFiles(name) {
 
           fs.outputFileSync(
             path.join(projectCwd, evaluateFilePath(filePath)),
-            dot.template(fileContents)(templateValues)
+            lodash.template(fileContents)(templateValues)
           )
         })
 

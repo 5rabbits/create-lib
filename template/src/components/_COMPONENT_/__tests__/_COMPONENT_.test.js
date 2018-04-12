@@ -1,17 +1,17 @@
 import React from 'react'
 import { shallow } from 'tests/test-helper'
-import {{= it.componentName }} from '../{{= it.componentName }}'
+import <%= componentName %> from '../<%= componentName %>'
 
-describe({{= it.componentName }}, () => {
+describe(<%= componentName %>, () => {
   it('should display "Click here" text', () => {
-    const component = shallow(<{{= it.componentName }} />)
+    const component = shallow(<<%= componentName %> />)
 
     expect(component).toHaveText('Click here')
   })
 
   describe('props.className', () => {
     it('should assign the specified className', () => {
-      const component = shallow(<{{= it.componentName }} className="some-classname" />)
+      const component = shallow(<<%= componentName %> className="some-classname" />)
 
       expect(component.find('button')).toHaveClassName('some-classname')
     })
@@ -19,7 +19,7 @@ describe({{= it.componentName }}, () => {
 
   describe('props.theme', () => {
     it('should assign a className for the specified theme', () => {
-      const component = shallow(<{{= it.componentName }} theme="primary" />)
+      const component = shallow(<<%= componentName %> theme="primary" />)
 
       expect(component.find('button')).toHaveClassName('theme--primary')
     })

@@ -1,21 +1,21 @@
-# {{= it.packageName }} [![npm](https://img.shields.io/npm/v/{{= it.packageName }}.svg?style=flat-square)](https://www.npmjs.com/package/{{= it.packageName }}) [![Travis](https://img.shields.io/travis/{{= it.repository }}.svg?style=flat-square)](https://travis-ci.org/{{= it.repository }}) [![Codecov](https://img.shields.io/codecov/c/repository/{{= it.repository }}.svg?style=flat-square)](https://codecov.io/gh/{{= it.repository }})
+# <%= packageName %> [![npm](https://img.shields.io/npm/v/<%= packageName %>.svg?style=flat-square)](https://www.npmjs.com/package/<%= packageName %>) [![Travis](https://img.shields.io/travis/<%= repository %>.svg?style=flat-square)](https://travis-ci.org/<%= repository %>) [![Codecov](https://img.shields.io/codecov/c/repository/<%= repository %>.svg?style=flat-square)](https://codecov.io/gh/<%= repository %>)
 
 _TODO:_ Add a short description for your library. It should probably match the field `description` on the `package.json` file.
 
 ## Usage
 
-* Install with `yarn add {{= it.packageName }}`.
+* Install with `yarn add <%= packageName %>`.
 * Install peer dependencies (if you haven't already) `yarn add react@^16.0.0 react-dom@^16.0.0`. React 15 is also supported.
 * Use the component:
 
 ```es6
-import {{= it.componentName }} from '{{= it.packageName }}'
-import '{{= it.packageName }}/dist/{{= it.libraryName }}.css'
+import <%= componentName %> from '<%= packageName %>'
+import '<%= packageName %>/dist/<%= libraryName %>.css'
 
-<{{= it.componentName }} />
+<<%= componentName %> />
 ```
 
-[Demo](https://{{= it.repositoryUser }}.github.io/{{= it.repositoryName }})
+[Demo](https://<%= repositoryUser %>.github.io/<%= repositoryName %>)
 
 ## Props
 
@@ -23,7 +23,7 @@ import '{{= it.packageName }}/dist/{{= it.libraryName }}.css'
 | :----------- | :----------------------- | :---------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | theme        | `'default'`, `'primary'` | `'default'` |          | Button theme.                                                                                                                                                                                     |
 | locale       | string                   | `'en'`      |          | Language to display the component. `en` and `es` are supported by default, but you can add other languages using the `translations` prop.                                                         |
-| translations | object                   |             |          | Extra locales for the component. Use [this file](https://github.com/{{= it.repository }}/blob/master/src/locale/en.js) as a template and pass the translations as `{ [locale]: [translations] }`. |
+| translations | object                   |             |          | Extra locales for the component. Use [this file](https://github.com/<%= repository %>/blob/master/src/locale/en.js) as a template and pass the translations as `{ [locale]: [translations] }`. |
 
 ## Development
 
@@ -40,7 +40,7 @@ import '{{= it.packageName }}/dist/{{= it.libraryName }}.css'
 
 * Run `yarn publish` to release a new version.
 * Before publishing the library will be automatically built. You can manually build for production using `yarn build`.
-* After publishing the stories will be automatically deployed to [github pages](https://{{= it.repositoryUser }}.github.io/{{= it.repositoryName }}). You can manually deploy the stories using `yarn deploy-storybook`.
+* After publishing the stories will be automatically deployed to [github pages](https://<%= repositoryUser %>.github.io/<%= repositoryName %>). You can manually deploy the stories using `yarn deploy-storybook`.
 
 ## More info
 
