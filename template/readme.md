@@ -5,7 +5,7 @@ _TODO:_ Add a short description for your library. It should probably match the f
 ## Usage
 
 * Install with `yarn add <%= packageName %>`.
-* Install peer dependencies (if you haven't already) `yarn add react@^16.0.0 react-dom@^16.0.0`. React 15 is also supported.
+* Install peer dependencies (if you haven't already) `yarn add react@^16.0.0 react-dom@^16.0.0`.
 * Use the component:
 
 ```es6

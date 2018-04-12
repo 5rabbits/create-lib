@@ -52,7 +52,7 @@
     "babel-runtime": "^6.0.0",
     "concurrently": "^3.0.0",
     "enzyme": "^3.0.0",
-    "enzyme-adapter-react-15": "^1.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
     "enzyme-to-json": "^3.3.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "16.1.0",
@@ -72,9 +72,8 @@
     "postcss-sassy-mixins": "^2.0.0",
     "postcss-simple-vars": "^4.0.0",
     "prettier": "^1.11.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "react-test-renderer": "^15.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "rollup": "^0.57.0",
     "rollup-plugin-babel": "^3.0.0",
     "rollup-plugin-commonjs": "^9.0.0",
@@ -89,11 +88,11 @@
     "storybook-readme": "^3.3.0"
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "dependencies": {
-    "@5rabbits/react-polyglot": "^0.2.0",
+    "@5rabbits/react-polyglot": "^0.2.6",
     "classnames": "^2.0.0",
     "deepmerge": "^2.0.0",
     "node-polyglot": "^2.2.0",
