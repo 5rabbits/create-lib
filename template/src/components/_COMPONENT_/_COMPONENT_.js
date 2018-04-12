@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { translate } from 'react-polyglot'
+import { translate } from '@5rabbits/react-polyglot'
 import classNames from 'classnames'
 import css from './<%= componentName %>.css'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { mount, shallow } from 'enzyme'
-import { translate } from 'react-polyglot'
+import { translate } from '@5rabbits/react-polyglot'
 import I18nProvider from '../I18nProvider'
 
 describe(I18nProvider, () => {
@@ -71,6 +71,58 @@ describe(I18nProvider, () => {
       )
 
       expect(component.find('span')).toHaveText('Hello world')
+    })
+  })
+
+  describe('if receives new props', () => {
+    describe('if the translations changed', () => {
+      it('should apply the new translations', () => {
+        const component = mount(
+          <I18nProvider
+            locale="en"
+            translations={{
+              en: {
+                helloWorld: 'Hello world',
+              },
+            }}
+          >
+            <TestComponent />
+          </I18nProvider>
+        )
+
+        component.setProps({
+          translations: {
+            en: {
+              helloWorld: 'Hello new world',
+            },
+          }
+        })
+
+        expect(component.find('span')).toHaveText('Hello new world')
+      })
+    })
+
+    describe("if the translations haven't changed", () => {
+      it('should not try to merge the base translations', () => {
+        const mergeTranslations = jest.fn()
+        const component = mount(
+          <I18nProvider
+            locale="en"
+            translations={{
+              en: {
+                helloWorld: 'Hello world',
+              },
+            }}
+          >
+            <TestComponent />
+          </I18nProvider>
+        )
+
+        component.instance().mergeTranslations = mergeTranslations
+        component.setProps({})
+
+        expect(mergeTranslations).not.toHaveBeenCalled()
+      })
     })
   })
 })

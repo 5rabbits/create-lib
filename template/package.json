@@ -93,11 +93,11 @@
     "react-dom": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
+    "@5rabbits/react-polyglot": "^0.2.0",
     "classnames": "^2.0.0",
     "deepmerge": "^2.0.0",
     "node-polyglot": "^2.2.0",
-    "prop-types": "^15.5.0",
-    "react-polyglot": "^0.2.0"
+    "prop-types": "^15.5.0"
   },
   "jest": {
     "moduleDirectories": ["src", "node_modules", "."],
