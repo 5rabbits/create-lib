@@ -17,12 +17,12 @@
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config": {
-          "resolve": {
-            "modules": ["node_modules", "tests", "src"]
-          }
-        }
+      "@5rabbits/eslint-import-resolver-directory-named": {
+        "moduleDirectory": [
+          "src",
+          "node_modules",
+          "."
+        ]
       }
     },
     "import/core-modules": [

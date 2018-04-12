@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { translate } from 'react-polyglot'
 import classNames from 'classnames'
-import css from './App.css'
+import css from './{{= it.componentName }}.css'
 
-const App = ({ className, t, theme, ...otherProps }) => (
+const {{= it.componentName }} = ({ className, t, theme, ...otherProps }) => (
   <button
     className={classNames(css['my-library'], css[`theme--${theme}`], className)}
     type="button"
@@ -14,14 +14,14 @@ const App = ({ className, t, theme, ...otherProps }) => (
   </button>
 )
 
-App.propTypes = {
+{{= it.componentName }}.propTypes = {
   className: PropTypes.string,
   t: PropTypes.func,
   theme: PropTypes.oneOf(['default', 'primary']),
 }
 
-App.defaultProps = {
+{{= it.componentName }}.defaultProps = {
   theme: 'default',
 }
 
-export default translate()(App)
+export default translate()({{= it.componentName }})

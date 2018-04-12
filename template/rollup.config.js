@@ -7,6 +7,7 @@ import includePaths from 'rollup-plugin-includepaths'
 import json from 'rollup-plugin-json'
 import svg from 'rollup-plugin-svg-to-jsx'
 import visualizer from 'rollup-plugin-visualizer'
+import namedDirectory from 'rollup-plugin-named-directory'
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
@@ -26,11 +27,12 @@ export default {
   },
   external: ['react', 'react-dom'],
   plugins: [
+    namedDirectory(),
     replace({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
     }),
     includePaths({
-      paths: ['src'],
+      paths: ['src', '.'],
     }),
     postcss({
       modules: true,

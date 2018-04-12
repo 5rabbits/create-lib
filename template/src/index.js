@@ -1,36 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { I18n } from 'react-polyglot'
-import baseTranslations from 'locale'
-import deepmerge from 'deepmerge'
-import App from 'App'
+import I18nProvider from 'components/I18nProvider'
+import {{= it.componentName }} from 'components/{{= it.componentName }}'
 
-const {{= it.componentName }} = ({ locale, translations, ...otherProps }) => {
-  const messages = deepmerge(baseTranslations, translations || {})
-  let validLocale = locale
+const {{= it.componentName }}Wrapper = ({ locale, translations, ...otherProps }) => (
+  <I18nProvider locale={locale} translations={translations}>
+    <{{= it.componentName }} {...otherProps} />
+  </I18nProvider>
+)
 
-  if (!messages[locale]) {
-    // eslint-disable-next-line no-console
-    console.warning(
-      `{{= it.packageName }}: Translations not found for locale "${locale}".`
-    )
-    validLocale = 'en'
-  }
-
-  return (
-    <I18n locale={validLocale} messages={messages[validLocale]}>
-      <App {...otherProps} />
-    </I18n>
-  )
-}
-
-{{= it.componentName }}.propTypes = {
+{{= it.componentName }}Wrapper.propTypes = {
   locale: PropTypes.string,
   translations: PropTypes.object,
 }
 
-{{= it.componentName }}.defaultProps = {
+{{= it.componentName }}Wrapper.defaultProps = {
   locale: 'en',
 }
 
-export default {{= it.componentName }}
+export default {{= it.componentName }}Wrapper
