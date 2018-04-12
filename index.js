@@ -109,6 +109,7 @@ function createProject(name) {
   })
   .then(createProjectFiles)
   .then(installDependencies)
+  .then(prettify)
   .then(createGitRepo)
   .then(printSuccess)
 }
@@ -144,6 +145,13 @@ function printSuccess() {
   console.log('')
 
   return Promise.resolve()
+}
+
+function prettify() {
+  spinner.start('Prettifying code')
+
+  return projectExec('yarn prettify')
+    .then(() => spinner.succeed('Code prettified'))
 }
 
 function installDependencies() {
